@@ -29,7 +29,7 @@ survived.equation <- "Survived~ Pclass + Sex + Age + SibSp + Parch + Fare + Emba
 survived.formula <- as.formula(survived.equation)
 install.packages("randomForest")
 library(randomForest)
-titanic.model <- randomForest(formula = survived.formula,data=titanictrain,ntree = 500,mtry=3,nodesize=0.01*nrow(titanic.test))
+titanic.model <- randomForest(formula = survived.formula,data=titanictrain,ntree = 500,mtry=3,nodesize=0.01*nrow(titanictest))
 features.equation <- "Pclass + Sex + Age + SibSp + Parch + Fare + Embarked"
 Survived <- predict(titanic.model,newdata=titanictest)
 Survived 
